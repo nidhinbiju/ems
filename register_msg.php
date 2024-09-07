@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<p>We will contact you soon for the verification of your registration request. Thank you</p>
+	<p>An email has been sent to you as per your registration request. We will let you know through the email soon if your request has been confirmed or canceled. Thank you.</p>
 </div>
 <div class="modal-footer display">
 	<div class="row">

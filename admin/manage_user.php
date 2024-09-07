@@ -47,7 +47,7 @@ foreach($user->fetch_array() as $k =>$v){
 		e.preventDefault();
 		start_load()
 		$.ajax({
-			url:'admin/ajax.php?action=save_user',
+			url:'ajax.php?action=save_user',
 			method:'POST',
 			data:$(this).serialize(),
 			success:function(resp){
@@ -55,10 +55,14 @@ foreach($user->fetch_array() as $k =>$v){
 					alert_toast("Data successfully saved",'success')
 					
 				}else{
-					$('#msg').html('<div class="alert alert-danger">Username already exist</div>')
+					$('#msg').html('<div class="alert alert-danger">Username already exists</div>')
 					end_load()
 				}
-			}
+			},
+			error:function(xhr, status, error){
+            $('#msg').html('<div class="alert alert-danger">Error: ' + xhr.responseText + '</div>');
+            end_load();
+        }
 		})
 	})
 
